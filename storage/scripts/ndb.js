@@ -119,6 +119,7 @@ async function openNamespaceTab(namespace) {
         const params = native.params;
         const returnType = native.return_type;
         const returnSize = native.return_size;
+        const build = native.first_build;
 
         htmlCode += "<li><a class='nativeName' id='func-" + n + "'>" + " 	•  " +
             "<span class='datatype'>" + returnType + " </span>" +
@@ -135,7 +136,7 @@ async function openNamespaceTab(namespace) {
         }
 
         htmlCode += ")  ";
-        htmlCode += "<span class='hash'>//  " + n + (jHash !== undefined ? "  " + jHash : "") + "</span>";
+        htmlCode += "<span class='hash'>//  " + n + (jHash !== undefined ? "  " + jHash : "") + " b" + build + "</span>";
     }
 
     htmlCode += "</ul>";
